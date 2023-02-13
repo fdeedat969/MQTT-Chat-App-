@@ -1,0 +1,17 @@
+{
+  "name": "remaking-punya-pak-pukis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Deedat Fatahillah",
+  "license": "ITB",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mqtt": "^4.3.7",
+    "socket.io": "^4.6.0"
+  }
+}
