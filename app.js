@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mqtt = require('mqtt');
 const port = 8000;
-const host = 'localhost';// '192.168.0.19'
+const host = '10.6.100.38';// '192.168.0.19'
 const socket = require('socket.io');
 
 // data buffer
@@ -19,10 +19,6 @@ app.get('/',(req,res)=>{
     res.send('index.html');
 });
 
-// app.get('/info',(req,res)=>{
-//     res.status(200).json({data:"hellowwww"});
-// });
-
 const server = app.listen(port,host,()=>{
     console.log(`listening on port: ${port}` );
 });
@@ -30,7 +26,7 @@ const io = socket(server);
 
 // mqtt retarded shit
 const topic = 'deedat/iotkewren';//'itb/tf/iiot/13319078/input/SL1';
-const client = mqtt.connect('mqtt://iot.tf.itb.ac.id');
+const client = mqtt.connect(`mqtt://${host}:1883`); //'mqtt://iot.tf.itb.ac.id'
 
 //subscribing to topic
 client.on('connect', ()=>{
