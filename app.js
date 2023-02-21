@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mqtt = require('mqtt');
 const port = 8000;
-const host = '10.6.100.38';// '192.168.0.19'
+const host = 'localhost';// '192.168.0.19'
 const socket = require('socket.io');
 
 // data buffer
@@ -48,13 +48,13 @@ io.on('connection',(socket)=>{
         await io.sockets.emit('mqtt',mqttData);
     });
     
-    socket.on('chat',(stream)=>{
-        io.sockets.emit('chat',stream); // useful for publishing to mqtt topic
-        console.log(stream,socket.id);
-    });
+    // // Sending data via websocket SCRAP THIS FOR NOW
+    // socket.on('chat',(stream)=>{
+    //     io.sockets.emit('chat',stream); // useful for publishing to mqtt topic
+    //     console.log(stream,socket.id);
+    // });
 
     socket.on('mqtt',(stream)=>{
-        //io.sockets.emit('mqtt',stream);
         client.publish(topic,stream.value);
         console.log(stream, socket.id);
     });

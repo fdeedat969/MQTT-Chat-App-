@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,17 +9,16 @@
     <title>IoT Coba-coba</title>
 </head>
 <body>
-    <h1> Chat mqtt hopefully </h1>
+    <h1> MQTT Chat by Deedat & Catur </h1>
     <div id="mario-chat">
         <div id="chat-window">
+            <p id="socketId"></p>
             <p id="output-mqtt"></p>
             <div id="output-message"></div>
         </div>
         <div class="kolomChat">
-            <input class="mqttVal" id="handle" type="text" placeholder="Mqtt Value">
-            <input class="pesan" id="message" type="text" placeholder="Message">
-            <button class="kirim" id="sendChat"></button>
-            <button class="mqttSen" id="sendMqtt">SEND MQTT</button>
+            <input class="pesan" id="handle" type="text" placeholder="Mqtt Value">
+            <button class="kirim" id="sendMqtt"></button>
         </div>
     </div>
 </body>
